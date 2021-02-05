@@ -42,7 +42,7 @@ public Optional<Usuario> CadastrarUsuario(Usuario usuario) {
 				
 				String auth = user.get().getUsuario() + ":" + user.get().getSenha();
 				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-				String autHeader = "Basic" + new String(encodedAuth);
+				String autHeader = "Basic " + new String(encodedAuth);
 				
 				user.get().setToken(autHeader);
 				user.get().setNome(usuario.get().getNome());
