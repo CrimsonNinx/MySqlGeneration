@@ -23,6 +23,9 @@ public class Tema {
 	@NotNull
 	private String descricao;
 	
+	private long qtd;
+	
+	
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
@@ -30,6 +33,19 @@ public class Tema {
 	
 	
 	
+	
+	
+	
+//GET AND SET
+//-------------------------------------------------------------------------------------------------------------------------
+	public long getQtd() {
+		return qtd;
+	}
+
+	public void setQtd(long qtd) {
+		this.qtd = qtd;
+	}
+
 	public long getId() {
 		return id;
 	}

@@ -25,19 +25,39 @@ public class Postagem {
 
 	@NotNull
 	@Size(min = 5, max = 100)
-
 	private String titulo;
+	
+	
 	@NotNull
 	@Size(min = 10, max = 500)
-
 	private String texto;
+	
+	
 	@Temporal(TemporalType.TIMESTAMP)
-
 	private Date date = new java.sql.Date(System.currentTimeMillis());
+	
 	
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("usuario")
+	private Usuario usuario;
+	
+
+	
+	
+	
+	
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 	public void setTema(Tema tema) {
 		this.tema = tema;
